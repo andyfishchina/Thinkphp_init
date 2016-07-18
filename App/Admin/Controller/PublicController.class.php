@@ -25,9 +25,9 @@ class PublicController extends BaseController {
 		$adminname = I('adminname', '');
 		$password = I('password', '');
 		$verify_code = I('verify', '');
-		if (empty($verify_code)) {
-			$this->out('error', '请填写验证码');
-		}
+	//	if (empty($verify_code)) {
+	//		$this->out('error', '请填写验证码');
+	//	}
 		if (empty($adminname)) {
 			$this->out('error', '请填写用户名');
 		}
@@ -35,10 +35,10 @@ class PublicController extends BaseController {
 			$this->out('error', '请填写密码');
 		}
 		// array('verify_code'=>'当前验证码的值','verify_time'=>'验证码生成的时间戳')
-		$verify = new \Think\Verify();
-		if (!$verify->check($verify_code)) {
-			$this->out('fail', '验证码不正确或已过期，请重试');
-		}
+	//	$verify = new \Think\Verify();
+	//	if (!$verify->check($verify_code)) {
+	//		$this->out('fail', '验证码不正确或已过期，请重试');
+	//	}
 
 		$model = D('Admin');
 		$where['adminname'] = $adminname;
